@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from '@angular/router';
+import {Routes} from '@angular/router';
 //import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,10 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import {MyStoreComponent} from './myStore/myStore.component';
 import { ProductAlertsComponent  } from "./product-alerts/product-alerts.component";
+
+const appRoutes: Routes = [
+  { path: 'myStore', loadChildren: '.my' },
+];
 
 @NgModule({
   declarations: [
@@ -24,9 +29,9 @@ import { ProductAlertsComponent  } from "./product-alerts/product-alerts.compone
     AppRoutingModule,
     FormsModule,
     //ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-    ])
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
