@@ -13,7 +13,7 @@ import {MyStoreComponent} from './myStore/myStore.component';
 import { ProductAlertsComponent  } from "./product-alerts/product-alerts.component";
 
 const appRoutes: Routes = [
-  { path: 'myStore', loadChildren: '.my' },
+  { path: 'myStore', component: MyStoreComponent },
 ];
 
 @NgModule({
